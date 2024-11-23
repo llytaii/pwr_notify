@@ -1,0 +1,12 @@
+[Unit]
+Description=start pwr_notify on startup
+After=network.target
+
+[Service]
+ExecStart=/home/llytaii/.bin/pwr_notify -b BAT0 -b BAT1 --polling-intervall 60 --timeout 15
+StandardOutput=journal
+StandardError=journal
+
+[Install]
+WantedBy=default.target
+
